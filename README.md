@@ -1,15 +1,15 @@
-# Projet n°9 : Abernathy Clinic - Patient
+# Projet n°9 : Abernathy Clinic - DiabeteRisk
 
 Sprint n° 3 : Fonctionnalité de calcul de risque de diabète en fonction des notes de patient.
 
 Architecture Micro Service Back-End - Spring Boot / Gradle
 
-#### Lien Docker : https://hub.docker.com/r/orionbs/mediscreen_patient
+#### Lien Docker : https://hub.docker.com/r/orionbs/mediscreen_diabeterisk
 
-#### Lien Github : https://github.com/OrionBS/Projet9_AbernathyClinic_Patient
+#### Lien Github : https://github.com/OrionBS/Projet9_AbernathyClinic_DiabeteRisk
 
 #### Lien Github Note History : https://github.com/OrionBS/Projet9_AbernathyClinic_NoteHistory
-#### Lien Github Diabete Risk : https://github.com/OrionBS/Projet9_AbernathyClinic_DiabeteRisk
+#### Lien Github Patient : https://github.com/OrionBS/Projet9_AbernathyClinic_Patient
 #### Lien Github Front-End : https://github.com/OrionBS/Projet9_AbernathyClinic_Front
 
 ## Pour commencer

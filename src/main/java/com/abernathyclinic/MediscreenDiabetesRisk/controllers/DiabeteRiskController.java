@@ -17,18 +17,26 @@ public class DiabeteRiskController {
         this.diabeteRiskService = diabeteRiskService;
     }
 
-    @GetMapping
-    public ResponseEntity<Object> generateDiabeteRisk(@RequestParam Integer patientId) {
+    @GetMapping(path = "/id")
+    public ResponseEntity<Object> generateDiabeteRiskById(@RequestParam Integer patientId) {
 
         DiabeteRisk diabeteRisk = diabeteRiskService.generateRiskById(patientId);
+
+        if (diabeteRisk == null) {
+            return new ResponseEntity<>("Patient inconnu",HttpStatus.NOT_FOUND);
+        }
 
         return new ResponseEntity<>(diabeteRisk, HttpStatus.OK);
     }
 
-    @GetMapping
+    @GetMapping(path = "/name")
     public ResponseEntity<Object> generateDiabeteRiskByFirstNameAndLastName(@RequestParam String firstName, @RequestParam String lastName) {
 
         DiabeteRisk diabeteRisk = diabeteRiskService.generateRiskByFirstNameAndLastName(firstName,lastName);
+
+        if (diabeteRisk == null) {
+            return new ResponseEntity<>("Patient inconnu",HttpStatus.NOT_FOUND);
+        }
 
         return new ResponseEntity<>(diabeteRisk,HttpStatus.OK);
     }

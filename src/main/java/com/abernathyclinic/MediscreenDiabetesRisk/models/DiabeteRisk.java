@@ -1,20 +1,22 @@
 package com.abernathyclinic.MediscreenDiabetesRisk.models;
 
+import java.time.LocalDate;
+import java.util.ArrayList;
 import java.util.List;
 
 public class DiabeteRisk {
 
     private Integer patientId;
 
-    private Integer patientDateOfBirth;
+    private LocalDate patientDateOfBirth;
 
     private String patientGender;
 
     private Integer riskLevel;
 
-    private List<String> triggerTerms;
+    private List<String> triggerTerms = new ArrayList<>();
 
-    public DiabeteRisk(Integer patientId, Integer patientDateOfBirth, String patientGender, Integer riskLevel, List<String> triggerTerms) {
+    public DiabeteRisk(Integer patientId, LocalDate patientDateOfBirth, String patientGender, Integer riskLevel, List<String> triggerTerms) {
         this.patientId = patientId;
         this.patientDateOfBirth = patientDateOfBirth;
         this.patientGender = patientGender;
@@ -33,11 +35,11 @@ public class DiabeteRisk {
         this.patientId = patientId;
     }
 
-    public Integer getPatientDateOfBirth() {
+    public LocalDate getPatientDateOfBirth() {
         return patientDateOfBirth;
     }
 
-    public void setPatientDateOfBirth(Integer patientDateOfBirth) {
+    public void setPatientDateOfBirth(LocalDate patientDateOfBirth) {
         this.patientDateOfBirth = patientDateOfBirth;
     }
 
@@ -63,5 +65,16 @@ public class DiabeteRisk {
 
     public void setPatientGender(String patientGender) {
         this.patientGender = patientGender;
+    }
+
+    @Override
+    public String toString() {
+        return "DiabeteRisk{" +
+                "patientId=" + patientId +
+                ", patientDateOfBirth=" + patientDateOfBirth +
+                ", patientGender='" + patientGender + '\'' +
+                ", riskLevel=" + riskLevel +
+                ", triggerTerms=" + triggerTerms +
+                '}';
     }
 }

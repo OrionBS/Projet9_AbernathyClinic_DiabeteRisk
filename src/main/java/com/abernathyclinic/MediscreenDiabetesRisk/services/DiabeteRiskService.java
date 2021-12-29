@@ -11,5 +11,5 @@ public interface DiabeteRiskService {
 
     DiabeteRisk generateRiskByFirstNameAndLastName(String firstName, String lastName);
 
-    Integer calculateRisk(LocalDate patientDateOfBirth, String patientGender, List<PatientNote> patientNoteList);
+    DiabeteRisk calculateRisk(LocalDate patientDateOfBirth, String patientGender, List<PatientNote> patientNoteList);
 }

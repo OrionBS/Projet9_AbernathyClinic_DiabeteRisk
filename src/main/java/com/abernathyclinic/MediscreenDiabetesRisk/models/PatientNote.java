@@ -1,21 +1,27 @@
 package com.abernathyclinic.MediscreenDiabetesRisk.models;
 
+import java.time.LocalDate;
+
 public class PatientNote {
 
     private Integer noteId;
 
     private Integer patientId;
 
+    private LocalDate dateOfCreation;
+
     private String practitionerNote;
 
-    public PatientNote(Integer noteId, Integer patientId, String practitionerNote) {
+    public PatientNote(Integer noteId, Integer patientId, LocalDate dateOfCreation, String practitionerNote) {
         this.noteId = noteId;
         this.patientId = patientId;
+        this.dateOfCreation = dateOfCreation;
         this.practitionerNote = practitionerNote;
     }
 
-    public PatientNote(Integer patientId, String practitionerNote) {
+    public PatientNote(Integer patientId, LocalDate dateOfCreation, String practitionerNote) {
         this.patientId = patientId;
+        this.dateOfCreation = dateOfCreation;
         this.practitionerNote = practitionerNote;
     }
 
@@ -44,6 +50,14 @@ public class PatientNote {
 
     public void setPractitionerNote(String practitionerNote) {
         this.practitionerNote = practitionerNote;
+    }
+
+    public LocalDate getDateOfCreation() {
+        return dateOfCreation;
+    }
+
+    public void setDateOfCreation(LocalDate dateOfCreation) {
+        this.dateOfCreation = dateOfCreation;
     }
 
     @Override

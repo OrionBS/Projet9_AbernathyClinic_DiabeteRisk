@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import java.util.List;
 
 
-@FeignClient(url = "http://localhost:8082/patHistory", name = "NotesHistory")
+@FeignClient(url = "${url.notesHistory}", name = "NotesHistory")
 public interface NotesHistoryProxy {
 
     @RequestMapping(method = RequestMethod.GET)

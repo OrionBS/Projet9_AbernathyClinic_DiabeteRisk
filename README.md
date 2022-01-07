@@ -32,6 +32,12 @@ cd /Projet9_AbernathyClinic_DiabeteRisk
 
 Pensez à intaller les dernières versions de Java, Gradle
 
+### Tests
+
+![img.png](img.png)
+
+![img_1.png](img_1.png)
+
 ## Fabriqué avec
 
 * [IntelliJ Community](https://www.jetbrains.com/idea/download/#section=windows) - Environnement de développement

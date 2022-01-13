@@ -12,6 +12,11 @@ import java.util.List;
 @FeignClient(url = "${url.notesHistory}", name = "NotesHistory")
 public interface NotesHistoryProxy {
 
+    /**
+     * récupère la liste de note du patient en fonction de son id.
+     * @param patientId identifiant unique du patient.
+     * @return la liste des ses notes.
+     */
     @RequestMapping(method = RequestMethod.GET)
     List<PatientNote> readNotesHistoryByPatientId(@RequestParam Integer patientId);
 

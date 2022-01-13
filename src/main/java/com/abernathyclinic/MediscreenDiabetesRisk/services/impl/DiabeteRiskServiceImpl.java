@@ -78,7 +78,11 @@ public class DiabeteRiskServiceImpl implements DiabeteRiskService {
 
             String practitionerNote = patientNote.getPractitionerNote();
 
+            practitionerNote = practitionerNote.toUpperCase();
+
             for (String triggerTerm : ListTriggerTerms.listTriggerTerms) {
+
+                triggerTerm = triggerTerm.toUpperCase();
 
                 if (practitionerNote.contains(triggerTerm)) {
 
@@ -102,6 +106,12 @@ public class DiabeteRiskServiceImpl implements DiabeteRiskService {
         if (patientAge > 30) {
 
             logger.debug("Plus de 30 ans.");
+            // Si le patient contient moins de 2 termes déclencheurs.
+            if (diabeteRisk.getTriggerTerms().size() < 2) {
+                diabeteRisk.setRiskLevel(0);
+                logger.debug("Moins de 2 termes.");
+            }
+
             // Si le patient contient entre 2 et 5 termes déclencheurs.
             if (diabeteRisk.getTriggerTerms().size() >= 2 && diabeteRisk.getTriggerTerms().size() < 6) {
                 diabeteRisk.setRiskLevel(1);

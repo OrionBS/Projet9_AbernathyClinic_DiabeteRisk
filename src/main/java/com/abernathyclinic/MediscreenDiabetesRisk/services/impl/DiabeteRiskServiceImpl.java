@@ -33,7 +33,7 @@ public class DiabeteRiskServiceImpl implements DiabeteRiskService {
         Patient patient = patientInfosProxy.readPatientById(patientId);
 
         if (patient == null) {
-            logger.debug("Patient Id introuvable, patient inconnu.");
+            logger.error("Patient Id introuvable, patient inconnu.");
             return null;
         }
 
@@ -52,6 +52,7 @@ public class DiabeteRiskServiceImpl implements DiabeteRiskService {
         Patient patient = patientInfosProxy.readPatientByFirstNameAndLastName(firstName, lastName);
 
         if (patient == null) {
+            logger.error("Patient introuvable, patient inconnu.");
             return null;
         }
 

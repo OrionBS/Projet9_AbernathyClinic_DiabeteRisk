@@ -33,10 +33,10 @@ public class DiabeteRiskServiceTest {
     @Test
     public void testGenerateRiskById() {
         //GIVEN
-        DiabeteRisk diabeteRisk = new DiabeteRisk(12, LocalDate.of(1970,12,25), "M", 1, Arrays.asList("Taille", "Vertige"));
+        DiabeteRisk diabeteRisk = new DiabeteRisk(12, LocalDate.of(1970,12,25), "M", 1, Arrays.asList("TAILLE", "VERTIGE"));
         Patient patient = new Patient(12,"testFirstName", "testLastName", LocalDate.of(1970,12,25), "M", "Somewhere", "Some phone");
-        PatientNote patientNote = new PatientNote(25,12, LocalDate.now(),"Taille");
-        PatientNote patientNote2 = new PatientNote(25,12, LocalDate.now(),"Vertige");
+        PatientNote patientNote = new PatientNote(25,12, LocalDate.now(),"TAILLE");
+        PatientNote patientNote2 = new PatientNote(25,12, LocalDate.now(),"VERTIGE");
         List<PatientNote> patientNoteList = Arrays.asList(patientNote,patientNote2);
         Mockito.when(patientInfosProxy.readPatientById(patient.getId())).thenReturn(patient);
         Mockito.when(notesHistoryProxy.readNotesHistoryByPatientId(patient.getId())).thenReturn(patientNoteList);
@@ -58,12 +58,12 @@ public class DiabeteRiskServiceTest {
         //GIVEN
         String firstName = "testFirstName";
         String lastName = "testLastName";
-        DiabeteRisk diabeteRisk = new DiabeteRisk(12, LocalDate.of(2000,12,25), "F", 2, Arrays.asList("Taille", "Vertige","Poids","Fumeur"));
+        DiabeteRisk diabeteRisk = new DiabeteRisk(12, LocalDate.of(2000,12,25), "F", 2, Arrays.asList("TAILLE", "VERTIGE","POIDS","FUMEUR"));
         Patient patient = new Patient(12,"testFirstName", "testLastName", LocalDate.of(2000,12,25), "F", "Somewhere", "Some phone");
-        PatientNote patientNote = new PatientNote(25,12, LocalDate.now(),"Taille");
-        PatientNote patientNote2 = new PatientNote(25,12, LocalDate.now(),"Vertige");
-        PatientNote patientNote3 = new PatientNote(25,12, LocalDate.now(),"Poids");
-        PatientNote patientNote4 = new PatientNote(25,12, LocalDate.now(),"Fumeur");
+        PatientNote patientNote = new PatientNote(25,12, LocalDate.now(),"TAILLE");
+        PatientNote patientNote2 = new PatientNote(25,12, LocalDate.now(),"VERTIGE");
+        PatientNote patientNote3 = new PatientNote(25,12, LocalDate.now(),"POIDS");
+        PatientNote patientNote4 = new PatientNote(25,12, LocalDate.now(),"FUMEUR");
         List<PatientNote> patientNoteList = Arrays.asList(patientNote,patientNote2,patientNote3,patientNote4);
         Mockito.when(patientInfosProxy.readPatientByFirstNameAndLastName(firstName,lastName)).thenReturn(patient);
         Mockito.when(notesHistoryProxy.readNotesHistoryByPatientId(patient.getId())).thenReturn(patientNoteList);
@@ -85,8 +85,8 @@ public class DiabeteRiskServiceTest {
         //GIVEN
         DiabeteRisk diabeteRisk = new DiabeteRisk(null, LocalDate.of(1970,12,25), "M", 0, Collections.emptyList());
         Patient patient = new Patient(12,"testFirstName", "testLastName", LocalDate.of(1970,12,25), "M", "Somewhere", "Some phone");
-        PatientNote patientNote = new PatientNote(25,12, LocalDate.now(),"Taille");
-        PatientNote patientNote2 = new PatientNote(25,12, LocalDate.now(),"Vertige");
+        PatientNote patientNote = new PatientNote(25,12, LocalDate.now(),"TAILLE");
+        PatientNote patientNote2 = new PatientNote(25,12, LocalDate.now(),"VERTIGE");
         List<PatientNote> patientNoteList = Arrays.asList(patientNote,patientNote2);
 
         //WHEN
@@ -100,14 +100,14 @@ public class DiabeteRiskServiceTest {
     @Test
     public void testCalculateRiskWithOlder30And6Terms() {
         //GIVEN
-        DiabeteRisk diabeteRisk = new DiabeteRisk(null, LocalDate.of(1970,12,25), "M", 2, Arrays.asList("Taille", "Vertige","Poids","Fumeur","Rechute","Anticorps"));
+        DiabeteRisk diabeteRisk = new DiabeteRisk(null, LocalDate.of(1970,12,25), "M", 2, Arrays.asList("TAILLE", "VERTIGE","POIDS","FUMEUR","RECHUTE","ANTICORPS"));
         Patient patient = new Patient(12,"testFirstName", "testLastName", LocalDate.of(1970,12,25), "M", "Somewhere", "Some phone");
-        PatientNote patientNote = new PatientNote(25,12, LocalDate.now(),"Taille");
-        PatientNote patientNote2 = new PatientNote(25,12, LocalDate.now(),"Vertige");
-        PatientNote patientNote3 = new PatientNote(25,12, LocalDate.now(),"Poids");
-        PatientNote patientNote4 = new PatientNote(25,12, LocalDate.now(),"Fumeur");
-        PatientNote patientNote5 = new PatientNote(25,12, LocalDate.now(),"Rechute");
-        PatientNote patientNote6 = new PatientNote(25,12, LocalDate.now(),"Anticorps");
+        PatientNote patientNote = new PatientNote(25,12, LocalDate.now(),"TAILLE");
+        PatientNote patientNote2 = new PatientNote(25,12, LocalDate.now(),"VERTIGE");
+        PatientNote patientNote3 = new PatientNote(25,12, LocalDate.now(),"POIDS");
+        PatientNote patientNote4 = new PatientNote(25,12, LocalDate.now(),"FUMEUR");
+        PatientNote patientNote5 = new PatientNote(25,12, LocalDate.now(),"RECHUTE");
+        PatientNote patientNote6 = new PatientNote(25,12, LocalDate.now(),"ANTICORPS");
         List<PatientNote> patientNoteList = Arrays.asList(patientNote,patientNote2,patientNote3,patientNote4,patientNote5,patientNote6);
 
         //WHEN
@@ -121,14 +121,14 @@ public class DiabeteRiskServiceTest {
     @Test
     public void testCalculateRiskWithYounger30And6Terms() {
         //GIVEN
-        DiabeteRisk diabeteRisk = new DiabeteRisk(null, LocalDate.of(2000,12,25), "M", 3, Arrays.asList("Taille", "Vertige","Poids","Fumeur","Rechute","Anticorps"));
+        DiabeteRisk diabeteRisk = new DiabeteRisk(null, LocalDate.of(2000,12,25), "M", 3, Arrays.asList("TAILLE", "VERTIGE","POIDS","FUMEUR","RECHUTE","ANTICORPS"));
         Patient patient = new Patient(12,"testFirstName", "testLastName", LocalDate.of(2000,12,25), "M", "Somewhere", "Some phone");
-        PatientNote patientNote = new PatientNote(25,12, LocalDate.now(),"Taille");
-        PatientNote patientNote2 = new PatientNote(25,12, LocalDate.now(),"Vertige");
-        PatientNote patientNote3 = new PatientNote(25,12, LocalDate.now(),"Poids");
-        PatientNote patientNote4 = new PatientNote(25,12, LocalDate.now(),"Fumeur");
-        PatientNote patientNote5 = new PatientNote(25,12, LocalDate.now(),"Rechute");
-        PatientNote patientNote6 = new PatientNote(25,12, LocalDate.now(),"Anticorps");
+        PatientNote patientNote = new PatientNote(25,12, LocalDate.now(),"TAILLE");
+        PatientNote patientNote2 = new PatientNote(25,12, LocalDate.now(),"VERTIGE");
+        PatientNote patientNote3 = new PatientNote(25,12, LocalDate.now(),"POIDS");
+        PatientNote patientNote4 = new PatientNote(25,12, LocalDate.now(),"FUMEUR");
+        PatientNote patientNote5 = new PatientNote(25,12, LocalDate.now(),"RECHUTE");
+        PatientNote patientNote6 = new PatientNote(25,12, LocalDate.now(),"ANTICORPS");
         List<PatientNote> patientNoteList = Arrays.asList(patientNote,patientNote2,patientNote3,patientNote4,patientNote5,patientNote6);
 
         //WHEN

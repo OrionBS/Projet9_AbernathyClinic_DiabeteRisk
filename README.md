@@ -10,7 +10,7 @@ Architecture Micro Service Back-End - Spring Boot / Gradle
 
 #### Lien Github Note History : https://github.com/OrionBS/Projet9_AbernathyClinic_NoteHistory
 #### Lien Github Patient : https://github.com/OrionBS/Projet9_AbernathyClinic_Patient
-#### Lien Github Front-End : https://github.com/OrionBS/Projet9_AbernathyClinic_Front
+#### Lien Github Front-End : https://github.com/OrionBS/Projet9_AbernathyClinic_FrontEnd
 
 ## Pour commencer
 
